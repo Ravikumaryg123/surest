@@ -1,7 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TABLE users (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    id UUID PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     username VARCHAR(255) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -9,7 +9,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE roles (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    id UUID PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE
 );
 
@@ -22,7 +22,7 @@ CREATE TABLE users_roles (
 );
 
 CREATE TABLE member (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id UUID PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     date_of_birth DATE NOT NULL,
