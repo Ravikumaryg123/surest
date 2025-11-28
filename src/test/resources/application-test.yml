@@ -1,0 +1,21 @@
+spring:
+  application: member
+  datasource:
+    url: jdbc:postgresql://localhost:5432/surest_testdb
+    username: postgres
+    password: 01012020
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update   # or create-drop for fresh schema each test run
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
